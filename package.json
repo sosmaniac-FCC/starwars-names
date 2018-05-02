@@ -1,11 +1,13 @@
 {
   "name": "starwars-names-sosmaniac",
-  "version": "0.0.0-development",
+  "version": "0.0.0-semantically-released",
   "description": "Get random\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Da \u001b[C\u001b[C\u001b[random Star Wars names\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
   "main": "src/index.js",
   "scripts": {
+    "commit": "git-cz",
     "test": "mocha src/index.test.js -w",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,13 @@
   },
   "devDependencies": {
     "chai": "4.1.2",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.1.0",
     "mocha": "5.1.1",
-    "semantic-release": "^15.2.0"
+    "semantic-release": "^15.2.0",
+    "travis-deploy-once": "^5.0.0"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
