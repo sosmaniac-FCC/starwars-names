@@ -1,14 +1,15 @@
 {
   "name": "starwars-names-sosmaniac",
-  "version": "1.2.0",
+  "version": "0.0.0-development",
   "description": "Get random\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Da \u001b[C\u001b[C\u001b[random Star Wars names\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha src/index.test.js -w"
+    "test": "mocha src/index.test.js -w",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sosmaniac-FCC/starwars-names.git"
+    "url": "https://github.com/sosmaniac-FCC/starwars-names-sosmaniac.git"
   },
   "keywords": [
     "random",
@@ -18,14 +19,15 @@
   "author": "John Simmons <jgsimmons42@students.tntech.edu>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sosmaniac-FCC/starwars-names/issues"
+    "url": "https://github.com/sosmaniac-FCC/starwars-names-sosmaniac/issues"
   },
-  "homepage": "https://github.com/sosmaniac-FCC/starwars-names#readme",
+  "homepage": "https://github.com/sosmaniac-FCC/starwars-names-sosmaniac#readme",
   "dependencies": {
     "unique-random-array": "1.0.1"
   },
   "devDependencies": {
     "chai": "4.1.2",
-    "mocha": "5.1.1"
+    "mocha": "5.1.1",
+    "semantic-release": "^15.2.0"
   }
 }
