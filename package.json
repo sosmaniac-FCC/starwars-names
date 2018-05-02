@@ -1,0 +1,27 @@
+{
+  "name": "starwars-names",
+  "version": "1.0.0",
+  "description": "Get random\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Da \u001b[C\u001b[C\u001b[random Star Wars names\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosmaniac-FCC/starwars-names.git"
+  },
+  "keywords": [
+    "random",
+    "star",
+    "wars"
+  ],
+  "author": "John Simmons <jgsimmons42@students.tntech.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sosmaniac-FCC/starwars-names/issues"
+  },
+  "homepage": "https://github.com/sosmaniac-FCC/starwars-names#readme",
+  "dependencies": {
+    "unique-random-array": "1.0.1"
+  }
+}
