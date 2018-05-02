@@ -1,5 +1,5 @@
 {
-  "name": "starwars-names",
+  "name": "starwars-names-sosmaniac",
   "version": "1.0.0",
   "description": "Get random\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Da \u001b[C\u001b[C\u001b[random Star Wars names\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
   "main": "src/index.js",
