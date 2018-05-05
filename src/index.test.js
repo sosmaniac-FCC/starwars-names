@@ -1,4 +1,5 @@
 var expect = require('chai').expect;
+require('mocha-sinon');
 var starWars = require('./index');
 
 describe('starwars-names', function() {
@@ -30,6 +31,14 @@ describe('starwars-names', function() {
       randomItems.forEach(function(item) {
         expect(starWars.all).to.include(item);
       });
+    });
+  });
+
+  describe('extraneous', function() {
+    it('should log `Hi!` to console', function() {
+      starWars.doSomething();
+      // ignore for now
+      expect(true).to.be.true;
     });
   });
 });
