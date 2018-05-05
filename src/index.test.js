@@ -1,5 +1,4 @@
 var expect = require('chai').expect;
-require('mocha-sinon');
 var starWars = require('./index');
 
 describe('starwars-names', function() {
