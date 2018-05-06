@@ -5,7 +5,10 @@
   "main": "dist/index.js",
   "scripts": {
     "commit": "git-cz",
-    "build": "babel --copy-files --out-dir dist --ignore src/*.test.js src",
+    "build": "npm-run-all --parallel build:*",
+    "build:main": "babel --copy-files --out-dir dist --ignore src/*.test.js src",
+    "build:umd": "webpack --output-filename index.umd.js -d",
+    "build:umd.min": "webpack --output-filename index.umd.min.js -p",
     "prebuild": "rimraf dist",
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
@@ -39,6 +42,8 @@
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
     "babel-preset-env": "1.6.1",
     "babel-preset-stage-0": "6.24.1",
     "babel-register": "6.26.0",
@@ -48,10 +53,13 @@
     "cz-conventional-changelog": "2.1.0",
     "ghooks": "2.0.4",
     "mocha": "5.1.1",
+    "npm-run-all": "4.1.2",
     "nyc": "11.7.1",
     "rimraf": "2.6.2",
     "semantic-release": "^15.2.0",
-    "travis-deploy-once": "^5.0.0"
+    "travis-deploy-once": "^5.0.0",
+    "webpack": "4.7.0",
+    "webpack-cli": "2.1.2"
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
