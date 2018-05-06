@@ -2,13 +2,16 @@
   "name": "starwars-names-sosmaniac",
   "version": "0.0.0-semantic",
   "description": "Get random\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Da \u001b[C\u001b[C\u001b[random Star Wars names\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "commit": "git-cz",
-    "test": "mocha src/index.test.js -w",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "build": "babel --copy-files --out-dir dist --ignore src/*.test.js src",
+    "prebuild": "rimraf dist",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
-    "test:single": "istanbul cover -x src/*.test.js node_modules/mocha/bin/_mocha -- -R spec src/index.test.js",
+    "test:watch": "npm run test:single -- -w",
+    "test:single": "mocha src/index.test.js --compilers js:babel-register",
+    "cover": "nyc mocha src/index.test.js --compilers js:babel-register",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
   },
@@ -21,6 +24,10 @@
     "star",
     "wars"
   ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "author": "John Simmons <jgsimmons42@students.tntech.edu>",
   "license": "MIT",
   "bugs": {
@@ -31,13 +38,18 @@
     "unique-random-array": "1.0.1"
   },
   "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-register": "6.26.0",
     "chai": "4.1.2",
     "codecov.io": "0.1.6",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "ghooks": "2.0.4",
-    "istanbul": "0.4.5",
     "mocha": "5.1.1",
+    "nyc": "11.7.1",
+    "rimraf": "2.6.2",
     "semantic-release": "^15.2.0",
     "travis-deploy-once": "^5.0.0"
   },
@@ -46,7 +58,13 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run test:single && npm run check-coverage"
+      "pre-commit": "npm run cover && npm run check-coverage"
     }
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-0"
+    ]
   }
 }
